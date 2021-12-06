@@ -1,0 +1,35 @@
+<ng-template #mymodal let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title  text-center" id="modal-basic-title">Examination FeedBack</h4>
+        <!-- <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button> -->
+    </div>
+    <div class="modal-body">
+        <p class="text-center mt-3 mb-5"><small><strong>{{question}}</strong></small></p>
+        <div class="row">
+            <div class="col-4 text-center" (click)="facecliked('happy')">
+                <div class="mini-container">
+                    <fa-icon [icon]="smileface" style="color: green;"></fa-icon>
+                    <p class="text-center"><small><strong>Satisfied</strong></small></p>
+                </div>
+            </div>
+            <div class="col-4 text-center" (click)="facecliked('neutral')">
+                <div class="mini-container">
+                    <fa-icon [icon]="neutralface" style="color: yellow;"></fa-icon>
+                    <p class="text-center "><small><strong>neutral</strong></small></p>
+                </div>
+            </div>
+            <div class="col-4 text-center" (click)="facecliked('sad')">
+                <div class="mini-container">
+                    <fa-icon [icon]="sadface" style="color: red;"></fa-icon>
+                    <p class="text-center "><small><strong>unhappy</strong></small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer ">
+        <button type="button " class="btn btn-outline-dark " (click)="modal.close( 'Save click') ">Close</button>
+    </div>
+</ng-template>
+<button class="btn btn-lg btn-outline-primary " (click)="open(mymodal) ">Open My Modal</button>
